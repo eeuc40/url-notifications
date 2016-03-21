@@ -3,7 +3,7 @@ var HTMLUtils = require('./HTMLUtils.js');
 
 var notificationHelper = new NotificationHelper();
 var htmlUtils = new HTMLUtils();
-var http = require('http');
+
 var intervalSeconds = 2;
 var intervalTime = intervalSeconds * 1000;
 
