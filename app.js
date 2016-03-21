@@ -1,20 +1,9 @@
-var notifier = require('node-notifier');
-var path = require('path');
+var NotificationHelper = require('./NotificationHelper.js');
+var notificationHelper = new NotificationHelper();
 
-notifier.notify({
-  title: 'My awesome title',
-  message: 'Hello from node, Mr. User!',
-  sound: true, // Only Notification Center or Windows Toasters
-  wait: true // Wait with callback, until user action is taken against notification
-}, function (err, response) {
-  // Response is response from notification
-});
+var intervalSeconds = 2;
+var intervalTime = intervalSeconds * 1000;
 
-notifier.on('click', function (notifierObject, options) {
-  // Triggers if `wait: true` and user clicks notification
-  console.log(notifierObject);
-});
-
-notifier.on('timeout', function (notifierObject, options) {
-  // Triggers if `wait: true` and notification closes
-});
+setInterval(function() {
+    notificationHelper.notify('New Support Tickets', "There are new support tickets that require attention");
+}, intervalTime);
